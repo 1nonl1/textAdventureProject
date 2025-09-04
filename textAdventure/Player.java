@@ -1,4 +1,4 @@
-package textAdventure;
+//package textAdventure;
 
 
 import java.util.ArrayList;
@@ -20,7 +20,6 @@ public class Player {
 	public Player() {
 		this.setName();
 		this.inventory.add(this.equippedWeapon);
-		this.equippedWeapon.setEquipped(true);
 		this.alive = true;
 	}
 	
@@ -29,7 +28,9 @@ public class Player {
 		Scanner scan = new Scanner(System.in);
 		System.out.print("enter your name: ");
 		this.name = scan.nextLine();
+		scan.close();
 	}
+
 	public String getName(){
 		return this.name;
 	}
@@ -56,6 +57,7 @@ public class Player {
 				choiceIsGood=false;
 			}
 		}
+		scan.close();
 		return output;
 	}
 
@@ -67,9 +69,7 @@ public class Player {
 
 	public void equip(int itemIndex) {
 		if (this.inventory.size()>itemIndex) {
-			this.equippedWeapon.setEquipped(false);
 			this.equippedWeapon = this.inventory.get(itemIndex);
-			this.equippedWeapon.setEquipped(true);
 		}
 	}
 	

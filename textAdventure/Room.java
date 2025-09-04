@@ -1,12 +1,10 @@
-package textAdventure;
+//package textAdventure;
 
 import java.util.Scanner;
 
 public class Room {
 	//Attributes
 	protected int roomNum;
-	private int choice;
-
 
 	//Constructor
 	public Room(){
@@ -17,10 +15,31 @@ public class Room {
 		System.out.println("Placeholder");
 		return 0;
 	}
-	public int getChoice(){
+	
+	public int getChoice(int maxNum){
 		Scanner scan = new Scanner(System.in);
-		int choice = scan.nextInt();
-		return choice;
+
+		String choice = "";
+		boolean choiceIsGood = false;
+		int output = 0;
+		while (!choiceIsGood) {
+			System.out.print("Choose choice: ");
+			choice = scan.nextLine();
+			choiceIsGood = true;
+			try {
+				output = Integer.valueOf(choice);
+				if (output>maxNum || output<=0) {
+					System.out.println("choice must in values");
+					choiceIsGood=false;
+				}
+			} 
+			catch (NumberFormatException e) {
+				System.out.println("choice must be a number");
+				choiceIsGood=false;
+			}
+		}
+		scan.close();
+		return output;
 	}
 	public int getRoomNum(){
 		return this.roomNum;

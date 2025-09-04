@@ -1,4 +1,4 @@
-package textAdventure;
+//package textAdventure;
 
 public class textRunner {
 

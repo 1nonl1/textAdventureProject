@@ -1,9 +1,7 @@
-package textAdventure;
-
+//package textAdventure;
 
 public class Item{
 	//Attributes
-	private boolean equipped = false;
 	
 	//every item has every stat, but an axe might have -5 healing power if you 
 	//try to heal with it
@@ -23,9 +21,6 @@ public class Item{
 	}
 
 	//Methods
-	public void setEquipped(boolean equipStatus) {
-		this.equipped = equipStatus;
-	}
 	
 	public String getName() {
 		return this.name;

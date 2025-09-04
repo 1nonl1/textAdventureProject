@@ -1,4 +1,4 @@
-package textAdventure;
+//package textAdventure;
 
 
 public class Monster {
@@ -7,7 +7,7 @@ public class Monster {
 	private int attackPower = 0;
 	private String name = "";
 	private String description = "";
-private boolean alive;
+	private boolean alive;
 		
 	//Constructor
 	public Monster(int atk, int hp, String name, String description) {
@@ -18,7 +18,7 @@ private boolean alive;
 	}
 		
 	//Methods
-public void takeDamage(int damage){
+	public void takeDamage(int damage){
 		this.health-=damage;
 		if (this.health<=0) {
 			this.alive=false;
@@ -33,10 +33,10 @@ public void takeDamage(int damage){
 		return this.alive;
 	}
 
-public int getAttackPower() {
+	public int getAttackPower() {
 		return attackPower;
 	}
-public void battleTurn(Player player) {
+	public void battleTurn(Player player) {
 		player.takeDamage(this.attackPower);
 		System.out.println(this.name + " deals " + this.attackPower + " damage");
 	}
@@ -44,6 +44,7 @@ public void battleTurn(Player player) {
 	public int getHealth() {
 		return health;
 	}
+	
 	@Override
 	public String toString() {
 		String output = name + "\n";
