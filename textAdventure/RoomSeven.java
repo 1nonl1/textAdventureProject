@@ -1,3 +1,6 @@
+//package textAdventure;
+//Graydon Room
+
 class RoomSeven extends Room{
 	public int changeRoom(int choice){
         switch(choice){
@@ -10,7 +13,7 @@ class RoomSeven extends Room{
         }
         return 7;
     }
-    
+
     public void showProblem(){
         //Custom problem for rooms (Define Here) 
         System.out.println("After fighting the hydra you come to three doors");

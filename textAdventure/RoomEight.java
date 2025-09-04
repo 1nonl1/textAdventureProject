@@ -1,3 +1,6 @@
+//package textAdventure;
+//Graydon Room
+
 class RoomEight extends Room{
 	public int changeRoom(int choice){
         switch(choice){

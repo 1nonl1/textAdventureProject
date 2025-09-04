@@ -41,6 +41,14 @@ public class Room {
 		scan.close();
 		return output;
 	}
+
+	public void setRoomNum(int roomNum) {
+		this.roomNum = roomNum;
+	}
+
+	public void playerInteraction(Player player){
+		System.out.println("ISSUE IN ROOM CLASS");
+	}
 	public int getRoomNum(){
 		return this.roomNum;
 	}
