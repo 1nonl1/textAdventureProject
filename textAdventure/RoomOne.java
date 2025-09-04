@@ -37,9 +37,9 @@ class RoomOne extends Room{
 	public void roomInteraction(Player other){
 		System.out.println("After you walk into the dungeon, you are in the first room. You see a riddle written on the wall...");
 		System.out.println("You have three tries to get it correct, if you fail, you die!");
+		Scanner scan = new Scanner(System.in);
 			for(int i = 3; i >= 0; i--){
 				System.out.println("What is always in front of you but can't be seen?"); //Question
-				Scanner scan = new Scanner(System.in);
 				String answer = scan.nextLine();
 				if(answer.toLowerCase().contains("future")){ // Answer
 					System.out.println("You have solved the riddle!");
@@ -48,8 +48,11 @@ class RoomOne extends Room{
 			else{
 				System.out.println("You have " + i + " tries left.");
 			}
-			} 
-			other.killPlayer();
+			
+		} 
+		scan.close();
+		other.killPlayer();
 		System.out.println("You died!");
+		
 	}
 }
