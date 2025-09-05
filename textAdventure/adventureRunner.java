@@ -32,7 +32,7 @@ public class adventureRunner{
 		
 		while(pOne.isAlive() && selectedRoom.roomNum != 15){
 			Player player = pOne;
-			selectedRoom.playerInteraction(player);
+			selectedRoom.roomInteraction(player, scan);
 			selectedRoom.showProblem();
 			selectedRoom = rooms.get(selectedRoom.changeRoom(selectedRoom.getChoice()));
 		}
