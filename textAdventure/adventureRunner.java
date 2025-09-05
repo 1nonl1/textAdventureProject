@@ -27,14 +27,14 @@ public class adventureRunner{
 		rooms.add(rFive);
 		rooms.add(rSix);
 			
-		pOne.setName();
 		System.out.println(pOne.getName() + " has entered the dungeon");
 		Room selectedRoom = rooms.get(0);
 		
-		while(pOne.isAlive() == true && selectedRoom.getRoomNum() != 15){
-			selectedRoom.playerInteraction(pOne);
+		while(pOne.isAlive() && selectedRoom.roomNum != 15){
+			Player player = pOne;
+			selectedRoom.playerInteraction(player);
 			selectedRoom.showProblem();
-			selectedRoom = rooms.get(selectedRoom.changeRoom(selectedRoom.getChoice(3)));
+			selectedRoom = rooms.get(selectedRoom.changeRoom(selectedRoom.getChoice()));
 		}
 	scan.close();	
 	}
