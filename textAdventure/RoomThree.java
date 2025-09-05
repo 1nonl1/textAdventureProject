@@ -3,6 +3,7 @@
 import java.util.Scanner;
 
 class RoomThree extends Room{
+	private Scanner scan = new Scanner(System.in);
 	protected int roomNum;
 	public RoomThree(int roomNum) {
 		this.roomNum = roomNum;
@@ -37,7 +38,6 @@ class RoomThree extends Room{
         System.out.println("You decide to go to the light, you see another riddle written on the wall.");
         for(int i = 3; i >= 0; i--){
             System.out.println("It belongs to you, but other people use it more than you do. What is it?"); //Question
-            Scanner scan = new Scanner(System.in);
             String answer = scan.nextLine();
             if(answer.toLowerCase().contains("name")){ // Answer
                 System.out.println("You have solved the riddle!");
@@ -47,6 +47,8 @@ class RoomThree extends Room{
             System.out.println("You have " + i + " tries left.");
         }
     } 
+	scan.close();
+	other.killPlayer();
     System.out.println("You died!");
     }	
 }

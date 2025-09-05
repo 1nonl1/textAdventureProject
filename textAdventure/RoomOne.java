@@ -3,6 +3,7 @@
 import java.util.Scanner;
 
 class RoomOne extends Room{
+	private Scanner scan = new Scanner(System.in);
 	protected int roomNum;
 	public RoomOne(int roomNum) {
 		this.roomNum = roomNum;
@@ -34,7 +35,7 @@ class RoomOne extends Room{
 	System.out.println("What will you do? \n\t1)Follow the breeze (Room 2)\n\t2)Follow the light (Room 3)\n\t3)Try to get some water (Room 4");
 
 	}
-	public void roomInteraction(Player other, Scanner scan){
+	public void roomInteraction(Player other){
 		System.out.println("After you walk into the dungeon, you are in the first room. You see a riddle written on the wall...");
 		System.out.println("You have three tries to get it correct, if you fail, you die!");
 			for(int i = 3; i >= 0; i--){
