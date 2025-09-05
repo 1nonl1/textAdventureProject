@@ -11,18 +11,9 @@ public class Room {
 		this.roomNum = 0;
 	}
 	//Methods
-	public int changeRoom(int choice){
+	public int changeRoom(Scanner scan){
 		System.out.println("Placeholder");
 		return 0;
-	}
-	
-	public int getChoice(){
-		Scanner scan = new Scanner(System.in);
-		System.out.print("> ");
-
-		int choice = scan.nextInt();
-		scan.close();
-		return choice;
 	}
 
 	public void setRoomNum(int roomNum) {
@@ -35,9 +26,10 @@ public class Room {
 		System.out.println("Something has happened");
 		System.out.println("What will you do? \n\t1)Choice 1\n\t2)Choice 2\n\t3)Choice 3");
 	}
-	public void roomInteraction(Player other){
+	public void roomInteraction(Player other, Scanner scan){
 	//Boss Fight or question or a chest 
-	System.out.println("PlaceHolder");
+		System.out.println("PlaceHolder");
+		
 	}
 
 }

@@ -5,10 +5,10 @@ import java.util.Scanner;
 
 public class adventureRunner{
 	public static void main(String[] args){
-		
 		Scanner scan = new Scanner(System.in);
 
 		Player pOne = new Player();
+		Room mainRoom = new Room();
 		RoomOne rOne = new RoomOne(1);
 		RoomTwo rTwo = new RoomTwo(2);
 		RoomThree rThree = new RoomThree(3);
@@ -30,13 +30,15 @@ public class adventureRunner{
 		System.out.println(pOne.getName() + " has entered the dungeon");
 		Room selectedRoom = rooms.get(0);
 		
-		while(pOne.isAlive() && selectedRoom.roomNum != 15){
+		while(selectedRoom.roomNum != 15){
 			Player player = pOne;
-			selectedRoom.roomInteraction(player);
+			selectedRoom.roomInteraction(player, scan);
 			selectedRoom.showProblem();
-			selectedRoom = rooms.get(selectedRoom.changeRoom(selectedRoom.getChoice()));
+			int changeRoomNum = selectedRoom.changeRoom(scan) - 1;
+			selectedRoom = rooms.get(changeRoomNum);
+			selectedRoom.getRoomNum();
 		}
-	scan.close();	
+		scan.close();
 	}
 }
 

@@ -28,7 +28,6 @@ public class Player {
 		Scanner scan = new Scanner(System.in);
 		System.out.print("enter your name: ");
 		this.name = scan.nextLine();
-		scan.close();
 	}
 
 	public String getName(){
@@ -57,7 +56,6 @@ public class Player {
 				choiceIsGood=false;
 			}
 		}
-		scan.close();
 		return output;
 	}
 
@@ -144,7 +142,6 @@ public class Player {
 	}
 	
 	public void battleTurn(Monster monster) {
-		
 		System.out.println("you have "+ this.health + " health");
 		System.out.println(monster.getName() + " has "+ monster.getHealth()+ " health");
 		System.out.println("What do you want to do?\n\t"+

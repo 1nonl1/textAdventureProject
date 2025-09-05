@@ -3,12 +3,13 @@
 import java.util.Scanner;
 
 class RoomFour extends Room{
-	private Scanner scan = new Scanner(System.in);
 	protected int roomNum;
 	public RoomFour(int roomNum) {
 		this.roomNum = roomNum;
 	}
-	public int changeRoom(int choice){
+	public int changeRoom(Scanner scan){
+		System.out.print("> ");
+		int choice = scan.nextInt();
 		int switchToRoom = 0;
 		switch(choice) {
 			case 1:
@@ -34,7 +35,7 @@ class RoomFour extends Room{
         System.out.println("The last door, you can see a statue.");
 	    System.out.println("What will you do? \n\t1)Head to the glowing sound (Room 6)\n\t2)Investigate the ammonia smell (Room 9)\n\t3)Investigate the statue (Room 10)");
 	}
-	public void roomInteraction(Player other){
+	public void roomInteraction(Player other, Scanner scan){
         System.out.println("You decide to follow the water sound. You are faced with a riddle.");
         for(int i = 3; i >= 0; i--){
             System.out.println("What has to be broken before you can use it?"); //Question
@@ -47,7 +48,6 @@ class RoomFour extends Room{
                 System.out.println("You have " + i + " tries left.");
             }
         } 
-		scan.close();
 		other.killPlayer();
 	    System.out.println("You died!");
     }	

@@ -6,7 +6,8 @@ class RoomSix extends Room{
 	public RoomSix(int roomNum) {
 		this.roomNum = roomNum;
 	}
-	public int changeRoom(int choice){
+	public int changeRoom(Scanner scan){    
+        
         int switchToRoom = 0;
         switch(choice){
             case 1:

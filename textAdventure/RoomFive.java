@@ -1,10 +1,14 @@
 //Toby
+import java.util.Scanner;
+
 class RoomFive extends Room{
     protected int roomNum;
     public RoomFive(int roomNum){
         this.roomNum = roomNum;
     }
-	public int changeRoom(int choice){
+	public int changeRoom(Scanner scan){
+		System.out.print("> ");
+		int choice = scan.nextInt();
         int switchToRoom = 0;
 		switch(choice) {
 			case 1:
@@ -30,8 +34,8 @@ class RoomFive extends Room{
         System.out.println("The last door, you can hear a grunting sound.");
 	    System.out.println("What will you do? \n\t1)Backtrack (Room 2)\n\t2)Find where the breeze is coming from (Room 2)\n\t3)Be brave and fight whatever is making the grunting sound (Room 14)");
     }
-    public void roomInteraction(Player other){
+    public void roomInteraction(Player other, Scanner scan){
         System.out.println("You decide to examine the pile of bones, you find a chest hidden inside!");
-        other.collect(new Item(8, -10, 15, "A powerful crossbow", "From the adventurers past"));
+        other.collect(new Item(8, -10, 15, "A powerful crossbow", "From the adventurers past"));//Fight function probably doesn't work
     }
 }

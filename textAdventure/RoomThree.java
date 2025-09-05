@@ -3,12 +3,13 @@
 import java.util.Scanner;
 
 class RoomThree extends Room{
-	private Scanner scan = new Scanner(System.in);
 	protected int roomNum;
 	public RoomThree(int roomNum) {
 		this.roomNum = roomNum;
 	}
-	public int changeRoom(int choice){
+	public int changeRoom(Scanner scan){
+		System.out.print("> ");
+		int choice = scan.nextInt();
 		int switchToRoom = 0;
 		switch(choice) {
 			case 1:
@@ -34,7 +35,7 @@ class RoomThree extends Room{
         System.out.println("The next hallway has a door (No lock) preventing you from going any farther.");
         System.out.println("What will you do? \n\t1)Go towards the water (Room 4)\n\t2)Explore the dark hallway (Room 7)\n\t3)Open the door to see what is on the other side (Room 8");
 	}
-	public void roomInteraction(Player other){
+	public void roomInteraction(Player other, Scanner scan){
         System.out.println("You decide to go to the light, you see another riddle written on the wall.");
         for(int i = 3; i >= 0; i--){
             System.out.println("It belongs to you, but other people use it more than you do. What is it?"); //Question
@@ -47,7 +48,6 @@ class RoomThree extends Room{
             System.out.println("You have " + i + " tries left.");
         }
     } 
-	scan.close();
 	other.killPlayer();
     System.out.println("You died!");
     }	
