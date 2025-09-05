@@ -47,6 +47,6 @@ class RoomThree extends Room{
             System.out.println("You have " + i + " tries left.");
         }
     } 
-    System.out.println("You died!");	
+    System.out.println("You died!");
     }	
 }
