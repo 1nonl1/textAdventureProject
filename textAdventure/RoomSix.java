@@ -7,15 +7,22 @@ class RoomSix extends Room{
 		this.roomNum = roomNum;
 	}
 	public int changeRoom(int choice){
+        int switchToRoom = 0;
         switch(choice){
             case 1:
-                return 3; // Room to change to
+                switchToRoom = 4;
+                break;// Room to change to
             case 2:
-                return 7;
+                switchToRoom = 7;
+                break;
             case 3:
-                return 11;
+                switchToRoom = 11;
+                break;
+            default:
+                System.err.println("Not a choice!");
+				break;
         }
-        return 6;
+        return switchToRoom;
     }
     public void showProblem(){
     //Custom problem for rooms (Define Here) 
