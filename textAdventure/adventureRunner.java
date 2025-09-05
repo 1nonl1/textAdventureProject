@@ -42,6 +42,8 @@ public class adventureRunner{
 			selectedRoom.getRoomNum();
 		}
 		scan.close();
+		System.out.println("CONGRADULATIONS!!!");
+		System.out.println("You have escaped the dungeon with all of your riches!");
 	}
 }
 
