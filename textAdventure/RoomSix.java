@@ -2,6 +2,10 @@
 //Graydon Room
 
 class RoomSix extends Room{
+    protected int roomNum;
+	public RoomSix(int roomNum) {
+		this.roomNum = roomNum;
+	}
 	public int changeRoom(int choice){
         switch(choice){
             case 1:
