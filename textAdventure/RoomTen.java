@@ -10,6 +10,9 @@ class RoomTen extends Room{
                 return 11;
             case 3:
                 return 13;
+            default:
+                System.err.println("Not a choice!");
+				break;
         }
         return 10;
     }
