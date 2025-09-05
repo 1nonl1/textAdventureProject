@@ -1,20 +1,32 @@
 //package textAdventure;
 //Graydon Room
 
+import java.util.Scanner;
+
 class RoomTen extends Room{
-	public int changeRoom(int choice){
+    protected int roomNum;
+    public RoomTen(int roomNum){
+        this.roomNum = roomNum;
+    }
+	public int changeRoom(Scanner scan){
+        System.out.print("> ");
+		int choice = scan.nextInt();
+        int switchToRoom = 0;
         switch(choice){
             case 1:
-                return 5; // Room to change to
+                switchToRoom = 5;
+                break; // Room to change to
             case 2:
-                return 11;
+                switchToRoom = 11;
+                break;
             case 3:
-                return 13;
+                switchToRoom = 13;
+                break;
             default:
                 System.err.println("Not a choice!");
 				break;
         }
-        return 10;
+        return switchToRoom;
     }
     public void showProblem(){
         //Custom problem for rooms (Define Here) 
@@ -25,7 +37,7 @@ class RoomTen extends Room{
         System.out.println("What will you do? \n\t1)Follow the breeze (Room 2)\n\t2)Follow the light (Room 3)\n\t3)Try to get some water (Room 4");
 
     }
-    public void roomInteraction(Player other){
+    public void roomInteraction(Player other, Scanner scan){
         System.out.println("A mischief of rats swarm at you");
         for(int i = 13; i > 0; i--){
             other.battle(new Monster(2, 4,"rat", "a sewer rat"));

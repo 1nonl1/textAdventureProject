@@ -8,17 +8,16 @@ public class adventureRunner{
 		Scanner scan = new Scanner(System.in);
 
 		Player pOne = new Player();
-		Room mainRoom = new Room();
 		RoomOne rOne = new RoomOne(1);
 		RoomTwo rTwo = new RoomTwo(2);
 		RoomThree rThree = new RoomThree(3);
 		RoomFour rFour = new RoomFour(4);
 		RoomFive rFive = new RoomFive(5);
 		RoomSix rSix = new RoomSix(6);
-		//RoomSeven rSeven = new RoomSeven(1);
-		//RoomEight rEight = new RoomEight(1);
-		//RoomNine rNine = new RoomNine(1);
-		//RoomTen rTen = new RoomTen(10);
+		RoomSeven rSeven = new RoomSeven(7);
+		RoomEight rEight = new RoomEight(8);
+		RoomNine rNine = new RoomNine(9);
+		RoomTen rTen = new RoomTen(10);
 		ArrayList<Room> rooms = new ArrayList<Room>();
 		rooms.add(rOne);
 		rooms.add(rTwo);
@@ -26,6 +25,10 @@ public class adventureRunner{
 		rooms.add(rFour);
 		rooms.add(rFive);
 		rooms.add(rSix);
+		rooms.add(rSeven);
+		rooms.add(rEight);
+		rooms.add(rNine);
+		rooms.add(rTen);
 			
 		System.out.println(pOne.getName() + " has entered the dungeon");
 		Room selectedRoom = rooms.get(0);

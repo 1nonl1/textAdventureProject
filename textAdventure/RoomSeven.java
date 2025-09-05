@@ -1,20 +1,32 @@
 //package textAdventure;
 //Graydon Room
 
+import java.util.Scanner;
+
 class RoomSeven extends Room{
-	public int changeRoom(int choice){
+    protected int roomNum;
+    public RoomSeven(int roomNum){
+        this.roomNum = roomNum;
+    }
+	public int changeRoom(Scanner scan){
+        System.out.print("> ");
+		int choice = scan.nextInt();
+        int switchToRoom = 0;
         switch(choice){
             case 1:
-                return 1; // Room to change to
+                switchToRoom = 1;
+                break; // Room to change to
             case 2:
-                return 5;
+                switchToRoom = 5;
+                break;
             case 3:
-                return 8;
+                switchToRoom = 8;
+                break;
             default:
                 System.err.println("Not a choice!");
 				break;
         }
-        return 7;
+        return switchToRoom;
     }
 
     public void showProblem(){
@@ -26,7 +38,7 @@ class RoomSeven extends Room{
         System.out.println("What will you do? \n\t1)return to familiarity (Door 1)\n\t2)Inspect the bones (Door 2)\n\t3)Inspect the presence(Door 3)");
 
     }
-    public void roomInteraction(Player other){
+    public void roomInteraction(Player other, Scanner scan){
         System.out.println("A giant squid reaches toward you");
         other.battle(new Monster(2, 30,"Giant squid", "An abomination from the water"));
         other.collect(new Item(10, -8, 20, "An adventurers sword", "From the stomach of the giant squid"));

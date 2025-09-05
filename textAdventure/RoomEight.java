@@ -1,20 +1,32 @@
 //package textAdventure;
 //Graydon Room
 
+import java.util.Scanner;
+
 class RoomEight extends Room{
-	public int changeRoom(int choice){
+    protected int roomNum;
+	public RoomEight(int roomNum) {
+		this.roomNum = roomNum;
+	}
+	public int changeRoom(Scanner scan){
+        System.out.print("> ");
+		int choice = scan.nextInt();
+        int switchToRoom = 0;
         switch(choice){
             case 1:
-                return 9; // Room to change to
+                switchToRoom = 9;
+                break; // Room to change to
             case 2:
-                return 6;
+                switchToRoom = 6;
+                break;
             case 3:
-                return 8;
+                switchToRoom = 8;
+                break;
             default:
                 System.err.println("Not a choice!");
 				break;
         }
-        return 8;
+        return switchToRoom;
     }
     public void showProblem(){
         //Custom problem for rooms (Define Here) 
@@ -25,7 +37,8 @@ class RoomEight extends Room{
         System.out.println("What will you do? \n\t1)Go into the weathered door(Door 1)\n\t2)Look into the smell(Door 2)\n\t3)Go to Door 3");
 
     }
-    public void roomInteraction(Player other){
-        System.out.println("...");
+    public void roomInteraction(Player other, Scanner scan){
+        System.out.println("...");//Finish this please
+        //Make this a question
     }
 }

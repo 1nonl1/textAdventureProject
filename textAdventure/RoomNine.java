@@ -4,19 +4,29 @@
 import java.util.Scanner;
 
 class RoomNine extends Room{
-	public int changeRoom(int choice){
+    protected int roomNum;
+    public RoomNine(int roomNum){
+        this.roomNum = roomNum;
+    }
+	public int changeRoom(Scanner scan){
+        System.out.print("> ");
+		int choice = scan.nextInt();
+        int switchToRoom = 0;
         switch(choice){
             case 1:
-                return 8; // Room to change to
+                switchToRoom = 8;
+                break; // Room to change to
             case 2:
-                return 12;
+                switchToRoom = 12;
+                break;
             case 3:
-                return 10;
+                switchToRoom = 10;
+                break;
             default:
                 System.err.println("Not a choice!");
 				break;
         }
-        return 9;
+        return switchToRoom;
     }
     public void showProblem(){
         //Custom problem for rooms (Define Here) 
@@ -28,11 +38,10 @@ class RoomNine extends Room{
 
     }
 
-    public void roomInteraction(Player other){
+    public void roomInteraction(Player other, Scanner scan){
         System.out.println("You see another riddle on the wall");
         System.out.println("You have three tries to get it correct, if you fail, you die!");
-        Scanner scan = new Scanner(System.in);
-        String answer = "";
+        String answer = scan.nextLine();
         for(int i = 3; i >= 0; i--){
             System.out.println("What word contains 26 letters but only has three syllables?"); //Question
             
@@ -47,6 +56,5 @@ class RoomNine extends Room{
         } 
         other.killPlayer();
         System.out.println("You died!");
-        scan.close();
     }
 }

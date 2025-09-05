@@ -1,5 +1,6 @@
 //package textAdventure;
 //Graydon Room
+import java.util.Scanner;
 
 class RoomSix extends Room{
     protected int roomNum;
@@ -7,7 +8,8 @@ class RoomSix extends Room{
 		this.roomNum = roomNum;
 	}
 	public int changeRoom(Scanner scan){    
-        
+        System.out.print("> ");
+		int choice = scan.nextInt();
         int switchToRoom = 0;
         switch(choice){
             case 1:
@@ -33,7 +35,7 @@ class RoomSix extends Room{
 	System.out.println("What will you do? \n\t1)Follow the breeze (Door 1)\n\t2)Go toward the water(Door 2)\n\t3)Check out the third door(Door 3)");
 
     }
-    public void roomInteraction(Player other){
+    public void roomInteraction(Player other, Scanner scan){
         System.out.println("A giant rat lunges toward you from the wall");
         other.battle(new Monster(5, 8,"giant rat", "A huge snarling beast"));
         other.collect(new Item(0, -3, 2, "rotting flesh","Flesh from the giant rat"));
