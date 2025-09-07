@@ -1,9 +1,9 @@
-//Toby
+//Donovan
 import java.util.Scanner;
 
-class RoomFive extends Room{
+class RoomFourteen extends Room{
     protected int roomNum;
-    public RoomFive(int roomNum){
+    public RoomFourteen(int roomNum){
         this.roomNum = roomNum;
     }
 	public int changeRoom(Scanner scan){
@@ -12,13 +12,13 @@ class RoomFive extends Room{
         int switchToRoom = 0;
 		switch(choice) {
 			case 1:
-				switchToRoom = 6;
+				switchToRoom = 1;
 				break; // Room to change to
 			case 2:
-				switchToRoom = 2;
+				switchToRoom = 13;
 				break;
 			case 3:
-				switchToRoom = 14;
+				switchToRoom = 15;
 				break;
 			default:
 				System.err.println("Not a choice!");
@@ -28,14 +28,15 @@ class RoomFive extends Room{
 }
     public void showProblem(){
         //Custom problem for rooms (Define Here) 
-        System.out.println("After opening the chest, you find new doors.");
-        System.out.println("The first door takes you back where you came from");
+        System.out.println("After defeating the slime, you find new doors");
+        System.out.println("The first door takes you back where you started");
         System.out.println("The second door has some wind coming from it");
         System.out.println("The last door, you can hear a grunting sound.");
 	    System.out.println("What will you do? \n\t1)Backtrack (Room 2)\n\t2)Find where the breeze is coming from (Room 2)\n\t3)Be brave and fight whatever is making the grunting sound (Room 14)");
     }
     public void roomInteraction(Player other, Scanner scan){
-        System.out.println("You decide to examine the pile of bones, you find a chest hidden inside!");
-        other.collect(new Item(8, -10, 15, "A powerful crossbow", "From the adventurers past"));
+        System.out.println("You go to the grunting sounds. The door suddenly shuts and you are greeted by a monster that attacks you.");
+		Monster monster = new Monster(2, 5, "Slime", "eerily squishy");
+        other.battle(monster);//Fight function not working!!
     }
 }

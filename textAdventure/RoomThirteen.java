@@ -3,9 +3,9 @@
 
 import java.util.Scanner;
 
-class RoomEight extends Room{
+class RoomThirteen extends Room{
     protected int roomNum;
-	public RoomEight(int roomNum) {
+	public RoomThirteen(int roomNum) {
 		this.roomNum = roomNum;
 	}
 	public int changeRoom(Scanner scan){
@@ -20,7 +20,7 @@ class RoomEight extends Room{
                 switchToRoom = 6;
                 break;
             case 3:
-                switchToRoom = 13;
+                switchToRoom = 1;
                 break;
             default:
                 System.err.println("Not a choice!");
@@ -32,13 +32,13 @@ class RoomEight extends Room{
         //Custom problem for rooms (Define Here) 
         System.out.println("you see 3 doors.");
         System.out.println("The first has a weathered door");
-        System.out.println("The second one has a smell coming from it");
-        System.out.println("The last door you see a room full of mirors");
-        System.out.println("What will you do? \n\t1)Go into the weathered door (Room 9)\n\t2)Look into the smell (Room 6)\n\t3)Go to Door 3 (Room 13)");
+        System.out.println("The second one has a faint glowing sound.");
+        System.out.println("The last door takes you to room 1");
+        System.out.println("What will you do? \n\t1)Go into the weathered door (Room )\n\t2)Follow the faint glowing sound (Room 6)\n\t3)Go to Door 3 (Room 1)");
 
     }
     public void roomInteraction(Player other, Scanner scan){
-        System.out.println("As you walk through the door, you see another riddle engraved on the wall.");
+        System.out.println("As you walk through the door, you see another riddle engraved on one of the mirrors");
 			for(int i = 3; i >= 0; i--){
 				System.out.println("What has hands, but can't clap?"); //Question
 				String answer = scan.next();
@@ -48,13 +48,11 @@ class RoomEight extends Room{
 			}
 			else{
 				System.out.println("You have " + i + " tries left.");
-                 if (i == 0) {
-					other.killPlayer();
-					System.out.println("You died!");
-				}
 			}
 			
 		} 
+		other.killPlayer();
+		System.out.println("You died!");
 
     }
 }

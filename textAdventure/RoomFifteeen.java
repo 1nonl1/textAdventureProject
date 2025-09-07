@@ -1,9 +1,9 @@
 //Toby
 import java.util.Scanner;
 
-class RoomFive extends Room{
+class RoomFifteen extends Room{
     protected int roomNum;
-    public RoomFive(int roomNum){
+    public RoomFifteen(int roomNum){
         this.roomNum = roomNum;
     }
 	public int changeRoom(Scanner scan){

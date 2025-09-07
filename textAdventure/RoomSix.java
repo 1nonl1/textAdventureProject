@@ -29,10 +29,11 @@ class RoomSix extends Room{
     }
     public void showProblem(){
     //Custom problem for rooms (Define Here) 
-    System.out.println("The first one has a slight breeze coming from it");
-    System.out.println("There is a small puddle coming underneath door 2");
+    System.out.println("After killing the giant rat, you see 3 doors.");
+    System.out.println("The first one has a trickling sound of water");
+    System.out.println("The second door is dark");
     System.out.println("The third one is slightly bowed outward");
-	System.out.println("What will you do? \n\t1)Follow the breeze (Door 1)\n\t2)Go toward the water(Door 2)\n\t3)Check out the third door(Door 3)");
+	System.out.println("What will you do? \n\t1)Follow the trickling sound of water (Room 4)\n\t2)Go toward the dark room (Room 7)\n\t3)Check out the third door (Room 11)");
 
     }
     public void roomInteraction(Player other, Scanner scan){

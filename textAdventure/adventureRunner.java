@@ -18,6 +18,11 @@ public class adventureRunner{
 		RoomEight rEight = new RoomEight(8);
 		RoomNine rNine = new RoomNine(9);
 		RoomTen rTen = new RoomTen(10);
+		RoomEleven rEleven = new RoomEleven(11);
+		RoomTwelve rTwelve = new RoomTwelve(12);
+		RoomThirteen rThirteen = new RoomThirteen(13);
+		RoomFourteen rFourteen = new RoomFourteen(14);
+		RoomFifteen rFifteen = new RoomFifteen(15);
 		ArrayList<Room> rooms = new ArrayList<Room>();
 		rooms.add(rOne);
 		rooms.add(rTwo);
@@ -29,6 +34,11 @@ public class adventureRunner{
 		rooms.add(rEight);
 		rooms.add(rNine);
 		rooms.add(rTen);
+		rooms.add(rEleven);
+		rooms.add(rTwelve);
+		rooms.add(rThirteen);
+		rooms.add(rFourteen);
+		rooms.add(rFifteen);
 			
 		System.out.println(pOne.getName() + " has entered the dungeon");
 		Room selectedRoom = rooms.get(0);

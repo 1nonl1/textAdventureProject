@@ -46,9 +46,11 @@ class RoomThree extends Room{
         }
         else{
             System.out.println("You have " + i + " tries left.");
+			if (i == 0) {
+				other.killPlayer();
+				System.out.println("You died!");
+			}
         }
     } 
-	other.killPlayer();
-    System.out.println("You died!");
     }	
 }
