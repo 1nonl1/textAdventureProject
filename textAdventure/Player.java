@@ -13,7 +13,7 @@ public class Player {
 	
 	private int health = 100;
 	private String name = "";
-	private boolean alive;
+	public boolean alive;
 	
 	
 	//Constructor
@@ -86,6 +86,7 @@ public class Player {
 
 
 	public void printInventory(){
+		System.out.println();
 		System.out.println("Player Inventory: ");
 		System.out.println("\tEquiped: "+this.equippedWeapon.getName());
 				for(int i = 0; i < this.inventory.size(); i++){
@@ -114,6 +115,7 @@ public class Player {
 		int i;
 		for(;;) {
 			this.printInventory();
+			System.out.println();
 			System.out.println("What do you want to do?\n\t"+
 					"1) Inspect item\n\t" +
 					"2) Switch equipped item\n\t" +
@@ -142,6 +144,7 @@ public class Player {
 	}
 	
 	public void battleTurn(Monster monster) {
+		System.out.println();
 		System.out.println("you have "+ this.health + " health");
 		System.out.println(monster.getName() + " has "+ monster.getHealth()+ " health");
 		System.out.println("What do you want to do?\n\t"+
@@ -149,6 +152,7 @@ public class Player {
 				"2) Attack\n\t" +
 				"3) Heal\n\t"+
 				"4) Inspect monster");
+		System.out.println();
 		switch(this.getChoice(4)){
 		case 1: 
 			this.openInventory();
@@ -167,9 +171,17 @@ public class Player {
 	
 	public void battle(Monster monster) { 
 		System.out.println(this.name + " has entered into battle with " + monster.getName());
-		while(this.alive && monster.isAlive()) {
-			this.battleTurn(monster);
-			monster.battleTurn(this);
+		while(true) {
+			if(this.alive && monster.isAlive()){
+				battleTurn(monster);
+				System.out.println();
+				System.out.println(monster.getName() + " is attacking!");
+				monster.battleTurn(this);
+				System.out.println();
+			}
+			else {
+				break;
+			}
 		}
 		if(this.alive) {
 			System.out.println("YOU WON");
@@ -177,12 +189,8 @@ public class Player {
 		else {
 			System.out.println("you died");
 		}
-		
 	}
 	
-
-
-
 }
 
 

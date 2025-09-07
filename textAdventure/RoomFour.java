@@ -38,7 +38,7 @@ class RoomFour extends Room{
 	public void roomInteraction(Player other, Scanner scan){
         System.out.println("You decide to follow the water sound. You are faced with a riddle.");
         for(int i = 3; i >= 0; i--){
-            System.out.println("What has to be broken before you can use it?"); //Question
+            System.out.println("What has to be broken before you can use it?\n>"); //Question
             String answer = scan.nextLine();
             if(answer.toLowerCase().contains("egg")){ // Answer
                 System.out.println("You have solved the riddle!");

@@ -15,6 +15,7 @@ public class Monster {
 		this.attackPower = atk;
 		this.name = name;
 		this.description = description;
+		this.alive = true;
 	}
 		
 	//Methods
@@ -37,8 +38,10 @@ public class Monster {
 		return attackPower;
 	}
 	public void battleTurn(Player player) {
+		System.out.println();
 		player.takeDamage(this.attackPower);
 		System.out.println(this.name + " deals " + this.attackPower + " damage");
+		System.out.println();
 	}
 	
 	public int getHealth() {

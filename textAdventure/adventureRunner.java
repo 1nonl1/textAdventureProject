@@ -43,13 +43,22 @@ public class adventureRunner{
 		System.out.println(pOne.getName() + " has entered the dungeon");
 		Room selectedRoom = rooms.get(0);
 		
-		while(selectedRoom.roomNum != 15){
-			Player player = pOne;
-			selectedRoom.roomInteraction(player, scan);
-			selectedRoom.showProblem();
-			int changeRoomNum = selectedRoom.changeRoom(scan) - 1;
-			selectedRoom = rooms.get(changeRoomNum);
-			selectedRoom.getRoomNum();
+		while(selectedRoom.roomNum != 15 || pOne.isAlive() == false){
+			try{
+				Player player = pOne;
+				selectedRoom.roomInteraction(player, scan);
+				Thread.sleep(1000);
+				System.out.println();
+				selectedRoom.showProblem();
+				Thread.sleep(1000);
+				System.out.println();
+				int changeRoomNum = selectedRoom.changeRoom(scan) - 1;
+				selectedRoom = rooms.get(changeRoomNum);
+				selectedRoom.getRoomNum();
+			}
+			catch(InterruptedException e){
+				System.err.println("Error, Thread.sleep was interrupted");
+			}
 		}
 		scan.close();
 		System.out.println("CONGRADULATIONS!!!");

@@ -43,7 +43,7 @@ class RoomEleven extends Room{
 		System.out.println("You wallk throught third door that was slightly bowed.");
 		System.out.println("You have three tries to get it correct, if you fail, you die!");
 			for(int i = 3; i >= 0; i--){
-				System.out.println("What is always in front of you but can't be seen?"); //Question
+				System.out.print("What is always in front of you but can't be seen?\n>"); //Question
 				String answer = scan.next();
 				if(answer.toLowerCase().contains("future")){ // Answer
 					System.out.println("You have solved the riddle!");

@@ -38,7 +38,7 @@ class RoomThree extends Room{
 	public void roomInteraction(Player other, Scanner scan){
         System.out.println("You decide to go to the light, you see another riddle written on the wall.");
         for(int i = 3; i >= 0; i--){
-            System.out.println("It belongs to you, but other people use it more than you do. What is it?"); //Question
+            System.out.print("It belongs to you, but other people use it more than you do. What is it?\n>"); //Question
             String answer = scan.nextLine();
             if(answer.toLowerCase().contains("name")){ // Answer
                 System.out.println("You have solved the riddle!");

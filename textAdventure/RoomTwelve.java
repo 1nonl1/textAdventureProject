@@ -38,7 +38,7 @@ class RoomTwelve extends Room{
 	public void roomInteraction(Player other, Scanner scan){
         System.out.println("You decide to follow the water sound. You are faced with a riddle.");
         for(int i = 3; i >= 0; i--){
-            System.out.println("What can you catch but never throw?"); //Question
+            System.out.print("What can you catch but never throw?\n>"); //Question
             String answer = scan.nextLine();
             if(answer.toLowerCase().contains("cold")){ // Answer
                 System.out.println("You have solved the riddle!");
@@ -46,10 +46,12 @@ class RoomTwelve extends Room{
             }
             else{
                 System.out.println("You have " + i + " tries left.");
+                if (i == 0) {
+					other.killPlayer();
+					System.out.println("You died!");
+				}
             }
         } 
-		other.killPlayer();
-	    System.out.println("You died!");
     }	
 
 }

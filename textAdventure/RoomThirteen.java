@@ -40,7 +40,7 @@ class RoomThirteen extends Room{
     public void roomInteraction(Player other, Scanner scan){
         System.out.println("As you walk through the door, you see another riddle engraved on one of the mirrors");
 			for(int i = 3; i >= 0; i--){
-				System.out.println("What has hands, but can't clap?"); //Question
+				System.out.print("What has hands, but can't clap?\n>"); //Question
 				String answer = scan.next();
 				if(answer.toLowerCase().contains("clock")){ // Answer
 					System.out.println("You have solved the riddle!");
@@ -48,11 +48,13 @@ class RoomThirteen extends Room{
 			}
 			else{
 				System.out.println("You have " + i + " tries left.");
+                if (i == 0) {
+					other.killPlayer();
+					System.out.println("You died!");
+				}
 			}
 			
 		} 
-		other.killPlayer();
-		System.out.println("You died!");
 
     }
 }

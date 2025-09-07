@@ -43,7 +43,7 @@ class RoomNine extends Room{
         System.out.println("You have three tries to get it correct, if you fail, you die!");
         String answer = scan.nextLine();
         for(int i = 3; i >= 0; i--){
-            System.out.println("What word contains 26 letters but only has three syllables?"); //Question
+            System.out.print("What word contains 26 letters but only has three syllables?\n>"); //Question
             
             answer = scan.nextLine();
             if(answer.toLowerCase().contains("alphabet")){ // Answer
