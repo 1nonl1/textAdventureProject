@@ -36,7 +36,7 @@ class RoomFourteen extends Room{
     }
     public void roomInteraction(Player other, Scanner scan){
         System.out.println("You go to the grunting sounds. The door suddenly shuts and you are greeted by a monster that attacks you.");
-		Monster monster = new Monster(2, 5, "Slime", "eerily squishy");
+		Monster monster = new Monster(5, 15, "Skeleton", "skelly bob");
         other.battle(monster);//Fight function not working!!
     }
 }
