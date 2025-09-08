@@ -43,7 +43,7 @@ public class adventureRunner{
 		System.out.println(pOne.getName() + " has entered the dungeon");
 		Room selectedRoom = rooms.get(0);
 		
-		while(selectedRoom.roomNum != 15 || pOne.isAlive() == false){
+		while(selectedRoom.roomNum < 15 && pOne.isAlive()){
 			try{
 				Player player = pOne;
 				selectedRoom.roomInteraction(player, scan);

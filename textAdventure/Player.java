@@ -140,7 +140,7 @@ public class Player {
 	public void takeDamage(int damage) {
 		this.health-=damage;
 		if(this.health<=0) {
-			this.alive=false;
+			killPlayer();
 		}
 	}
 	

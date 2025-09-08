@@ -22,7 +22,7 @@ class RoomFive extends Room{
 				break;
 			default:
 				System.err.println("Not a choice!");
-				break;
+				changeRoom(scan);
 		}
 		return switchToRoom;
 }
