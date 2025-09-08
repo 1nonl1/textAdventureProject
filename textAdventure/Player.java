@@ -98,6 +98,7 @@ public class Player {
 	public boolean isAlive(){
 		return this.alive;
 	}
+	
 	public void killPlayer(){
 		this.alive = false;
 	}
