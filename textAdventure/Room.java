@@ -38,7 +38,6 @@ public class Room {
 				choiceIsGood=false;
 			}
 		}
-		scan.close();
 		return output;
 	}
 
