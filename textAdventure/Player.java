@@ -101,6 +101,8 @@ public class Player {
 	
 	public void killPlayer(){
 		this.alive = false;
+		System.out.println("You died!");
+		System.exit(0);
 	}
 	public void attack(Monster monster) {
 		int damage = this.equippedWeapon.getAttackPower();
