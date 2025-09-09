@@ -1,4 +1,4 @@
-#Our Text Adventure
+Our Text Adventure
 ---
 ## Made By
  - Graydon
