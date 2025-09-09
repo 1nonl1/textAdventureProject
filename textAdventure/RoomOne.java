@@ -9,9 +9,8 @@ class RoomOne extends Room{
 	}
 	
 	public int changeRoom(Scanner scan){
-		System.out.print("> ");
-		int choice = scan.nextInt();
 		int switchToRoom = 0;
+		int choice = getChoiceNum(3, scan);
 		switch(choice) {
 			case 1:
 				switchToRoom = 2;

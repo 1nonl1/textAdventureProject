@@ -10,6 +10,29 @@ public class Room {
 	public Room(){
 		this.roomNum = 0;
 	}
+	
+	public int getChoiceNum(int maxNum,Scanner scan){
+		String choice = "";
+		boolean choiceIsGood = false;
+		int output = 0;
+		while (!choiceIsGood) {
+			System.out.print("> ");
+			choice = scan.nextLine();
+			choiceIsGood = true;
+			try {
+				output = Integer.valueOf(choice);
+				if (output>maxNum || output<=0) {
+					System.out.println("choice must in values");
+					choiceIsGood=false;
+				}
+			} 
+			catch (NumberFormatException e) {
+				System.out.println("choice must be a number");
+				choiceIsGood=false;
+			}
+		}
+		return output;
+	}
 	//Methods
 	public int changeRoom(Scanner scan){
 		System.out.println("Placeholder");

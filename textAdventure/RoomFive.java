@@ -7,8 +7,8 @@ class RoomFive extends Room{
         this.roomNum = roomNum;
     }
 	public int changeRoom(Scanner scan){
-		System.out.print("> ");
-		int choice = scan.nextInt();
+		int choice = getChoiceNum(3, scan);
+		
         int switchToRoom = 0;
 		switch(choice) {
 			case 1:
