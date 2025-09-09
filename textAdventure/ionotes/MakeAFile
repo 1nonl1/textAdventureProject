@@ -1,0 +1,64 @@
+package fileIOStuff;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.util.Scanner;
+
+public class MakeAFile {
+	private PrintWriter write;
+	private File file;
+	private Scanner fileScan;
+	
+	public MakeFile() {
+		try {
+			write = new PrintWriter("IOTester.txt","UTF-8");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+	}
+	public MakeAFile(String fileName) {
+		try {
+			write = new PrintWriter(fileName+".txt","UTF-8");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void makeTestFile() {
+		for(int i=0;i<100;i++) {
+			write.println("Test #"+i);
+		}
+		write.close();
+	}
+	
+	public void setFile(String file) {
+		this.file = new File(file);
+		try {
+			this.fileScan = new Scanner(this.file);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void removeEvens() {
+		String allText = "";
+		while(this.fileScan.hasNext()) {
+			String currentLine = fileScan.nextLine();
+			if (hasOdd(currentLine)) {
+				allText+=currentLine;
+			}
+		}
+		write.write(allText);
+		write.close();
+	}
+	public boolean hasOdd(String Line) {
+		
+	}
+	
+}

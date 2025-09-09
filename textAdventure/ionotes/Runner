@@ -1,0 +1,8 @@
+package fileIOStuff;
+
+public class IONotesRunner {
+	public static void main(String[] args) {
+		MakeFile file = new MakeFile();
+		file.makeTestFile();
+	}
+}
