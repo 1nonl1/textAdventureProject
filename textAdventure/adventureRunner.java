@@ -42,8 +42,8 @@ public class adventureRunner{
 			
 		System.out.println(pOne.getName() + " has entered the dungeon");
 		Room selectedRoom = rooms.get(0);
-		
-		while(selectedRoom.roomNum < 15 && pOne.isAlive()){
+		int roomnum=0;
+		while(roomnum < 14 && pOne.isAlive()){
 			try{
 				Player player = pOne;
 				selectedRoom.roomInteraction(player, scan);
@@ -52,16 +52,16 @@ public class adventureRunner{
 				selectedRoom.showProblem();
 				Thread.sleep(1000);
 				System.out.println();
-				int changeRoomNum = selectedRoom.changeRoom(scan) - 1;
-				selectedRoom = rooms.get(changeRoomNum);
-				selectedRoom.getRoomNum();
+				roomnum = selectedRoom.changeRoom(scan)-1;
+				selectedRoom = rooms.get(roomnum);
+				System.out.println(roomnum+ "");
 			}
 			catch(InterruptedException e){
 				System.err.println("Error, Thread.sleep was interrupted");
 			}
 		}
 		scan.close();
-		System.out.println("CONGRADULATIONS!!!");
+		System.out.println("CONGRATULATIONS!!!");
 		System.out.println("You have escaped the dungeon with all of your riches!");
 	}
 }

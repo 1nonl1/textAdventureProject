@@ -41,7 +41,7 @@ class RoomNine extends Room{
     public void roomInteraction(Player other, Scanner scan){
         System.out.println("You try to figure out where the smell of ammonia is coming from, but you are met with a riddle.");
         System.out.println("You have three tries to get it correct, if you fail, you die!");
-        String answer = scan.nextLine();
+        String answer = "";
         for(int i = 3; i >= 0; i--){
             System.out.print("What word contains 26 letters but only has three syllables?\n>"); //Question
             

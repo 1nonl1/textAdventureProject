@@ -40,7 +40,7 @@ class RoomTen extends Room{
     public void roomInteraction(Player other, Scanner scan){
         System.out.println("As you walk through the door in examine the statue...");
         System.out.println("A mischief of rats swarm at you");
-        for(int i = 13; i > 0; i--){
+        for(int i = 5; i > 0; i--){
             other.battle(new Monster(2, 4,"rat", "a sewer rat"));
         }
         other.collect(new Item(0, 10, 7, "Cooked rat", "some rat flesh you cooked over a makeshift fire"));
